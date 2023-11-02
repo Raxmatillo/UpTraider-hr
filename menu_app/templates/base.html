@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UPTraider{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Logo</h1>
+        <nav>
+            {% load menu_tags %}
+            {% draw_menu 'main_menu' %}
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; 2023 Rakhmatullo
+    </footer>
+</body>
+</html>
