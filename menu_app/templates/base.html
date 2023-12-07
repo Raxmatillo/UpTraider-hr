@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}UPTraider{% endblock %}</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        ul li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f8f8f8;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #ddd;
+        }
+
+
+        ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f5f5f5;
+            min-width: 160px;
+        }
+
+        ul li ul li a {
+            color: #333;
+        }
+
+        ul li ul li a:hover {
+            background-color: #ddd;
+        }
+
+        ul li ul li {
+            display: block;
+        }
+
+        ul li:hover>ul {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Logo</h1>
+        <h1>UPTraider</h1>
         <nav>
             {% load menu_tags %}
             {% draw_menu 'main_menu' %}
@@ -19,8 +72,6 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        &copy; 2023 Rakhmatullo
-    </footer>
-</body>
+    </body>
+
 </html>
